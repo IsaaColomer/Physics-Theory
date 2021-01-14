@@ -8,27 +8,18 @@
 #define WW 1280
 #define WH 720
 
-class Player
+struct Player
 {
-public:
-	SDL_Rect playerRect;
+	SDL_Rect rect;
 	float x, y;
 	float angle;
 	float velocity;
-
-	Player(int x_, int y_, int w_, int h_)
-	{
-		playerRect =
-		{
-			x_,y_,w_,h_
-		};
-		x = x_;
-		y = y_;
-		angle = 0;
-		velocity = 0;
-	}
-	~Player();
 };
+
+void collideRects(SDL_Rect _static, SDL_Rect _dynamic)
+{
+
+}
 
 int main(int argc, char** argv)
 {
@@ -39,7 +30,9 @@ int main(int argc, char** argv)
 	//bools
 	bool close;
 	//Player object
-	Player* player = new Player(WW / 2, WH / 2, 40, 40);
+	Player* player = new Player{ { WW / 2, WH / 2, 40, 40 }, WW / 2, WH / 2, 0, 0 };
+
+	SDL_Rect enemy = { 100,100,100,100 };
 
 	//Boxes object
 	SDL_Init(SDL_INIT_VIDEO);              // Initialize SDL2
@@ -55,20 +48,25 @@ int main(int argc, char** argv)
 		//INPUT
 		while (SDL_PollEvent(&events))
 		{
-			if (events.type == SDL_QUIT)
-				close = true;
+			if (events.type == SDL_QUIT) close = true;
 		}
 		//Get the keyboard
 		const Uint8* keysArray = SDL_GetKeyboardState(NULL);
-		if (keysArray[SDL_SCANCODE_ESCAPE])
-			close = true;
+		if (keysArray[SDL_SCANCODE_ESCAPE]) close = true;
 
 		//PLAYER MOVEMENT
 
 		if (keysArray[SDL_SCANCODE_LEFT]) player->angle -= 1.0f;
 		if (keysArray[SDL_SCANCODE_RIGHT]) player->angle += 1.0f;
 
-		if (keysArray[SDL_SCANCODE_R]) player->velocity = 0;
+		if (keysArray[SDL_SCANCODE_R])
+		{
+			player->rect = { WW / 2, WH / 2, 40, 40 };
+			player->x = WW / 2;
+			player->y = WH / 2;
+			player->angle = 0;
+			player->velocity = 0;
+		}
 
 		if (keysArray[SDL_SCANCODE_UP]) player->velocity += 0.01f;
 		if (keysArray[SDL_SCANCODE_DOWN]) player->velocity -= 0.01f;
@@ -87,9 +85,13 @@ int main(int argc, char** argv)
 		//if (player->playerRect.y < 0) player->playerRect.y = 1;
 		//if (player->playerRect.y > 720 - player->playerRect.h) player->playerRect.y = 720 - player->playerRect.h-1;
 
-		player->playerRect.x = player->x;
+		player->rect.x = player->x;
 
-		player->playerRect.y = player->y;
+		player->rect.y = player->y;
+
+		//collisions
+
+		collideRects(player->rect, enemy);
 
 		//DRAW
 			//BACKGROUND
@@ -98,10 +100,10 @@ int main(int argc, char** argv)
 		SDL_RenderClear(renderer);
 		//PLAYER
 		SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-		SDL_RenderFillRect(renderer, &player->playerRect);
+		SDL_RenderDrawRect(renderer, &player->rect);
 
-		int x1 = player->playerRect.x + player->playerRect.w / 2;
-		int y1 = player->playerRect.y + player->playerRect.h / 2;
+		int x1 = player->rect.x + player->rect.w / 2;
+		int y1 = player->rect.y + player->rect.h / 2;
 
 		int x2 = x1 + 100 * cos(player->angle * RAD);
 		int y2 = y1 + 100 * sin(player->angle * RAD);

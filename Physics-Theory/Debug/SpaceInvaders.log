@@ -1,10 +1,8 @@
 ﻿  main.cpp
-C:\Users\isaaccc1\Documents\GitHub\Physics-Theory\Physics-Theory\main.cpp(25,7): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\isaaccc1\Documents\GitHub\Physics-Theory\Physics-Theory\main.cpp(26,7): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\isaaccc1\Documents\GitHub\Physics-Theory\Physics-Theory\main.cpp(80,59): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-C:\Users\isaaccc1\Documents\GitHub\Physics-Theory\Physics-Theory\main.cpp(85,59): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-C:\Users\isaaccc1\Documents\GitHub\Physics-Theory\Physics-Theory\main.cpp(90,32): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\isaaccc1\Documents\GitHub\Physics-Theory\Physics-Theory\main.cpp(92,32): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\isaaccc1\Documents\GitHub\Physics-Theory\Physics-Theory\main.cpp(106,10): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\isaaccc1\Documents\GitHub\Physics-Theory\Physics-Theory\main.cpp(107,10): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\isaaccc1\Documents\GitHub\Physics-Theory\Physics-Theory\main.cpp(78,59): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\isaaccc1\Documents\GitHub\Physics-Theory\Physics-Theory\main.cpp(83,59): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\isaaccc1\Documents\GitHub\Physics-Theory\Physics-Theory\main.cpp(88,26): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\isaaccc1\Documents\GitHub\Physics-Theory\Physics-Theory\main.cpp(90,26): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\isaaccc1\Documents\GitHub\Physics-Theory\Physics-Theory\main.cpp(108,10): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\isaaccc1\Documents\GitHub\Physics-Theory\Physics-Theory\main.cpp(109,10): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
   SpaceInvaders.vcxproj -> C:\Users\isaaccc1\Documents\GitHub\Physics-Theory\Physics-Theory\Debug\SpaceInvaders.exe
