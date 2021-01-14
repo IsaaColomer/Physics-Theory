@@ -1,8 +1,1 @@
-﻿  main.cpp
-C:\Users\isaaccc1\Documents\GitHub\Physics-Theory\Physics-Theory\main.cpp(78,59): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-C:\Users\isaaccc1\Documents\GitHub\Physics-Theory\Physics-Theory\main.cpp(83,59): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-C:\Users\isaaccc1\Documents\GitHub\Physics-Theory\Physics-Theory\main.cpp(88,26): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\isaaccc1\Documents\GitHub\Physics-Theory\Physics-Theory\main.cpp(90,26): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\isaaccc1\Documents\GitHub\Physics-Theory\Physics-Theory\main.cpp(108,10): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\isaaccc1\Documents\GitHub\Physics-Theory\Physics-Theory\main.cpp(109,10): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-  SpaceInvaders.vcxproj -> C:\Users\isaaccc1\Documents\GitHub\Physics-Theory\Physics-Theory\Debug\SpaceInvaders.exe
+﻿LINK : fatal error LNK1104: no se puede abrir el archivo 'SDL2main.lib'
