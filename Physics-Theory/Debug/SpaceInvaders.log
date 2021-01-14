@@ -1,4 +1,4 @@
 ﻿  main.cpp
-C:\Users\isaaccc1\Documents\GitHub\Physics-Theory\Physics-Theory\main.cpp(79,32): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\isaaccc1\Documents\GitHub\Physics-Theory\Physics-Theory\main.cpp(109): warning C4715: 'SDL_main': not all control paths return a value
-LINK : fatal error LNK1104: cannot open file 'SDL2main.lib'
+C:\Users\isaaccc1\Documents\GitHub\Physics-Theory\Physics-Theory\main.cpp(73,44): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
+C:\Users\isaaccc1\Documents\GitHub\Physics-Theory\Physics-Theory\main.cpp(80,44): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
+  SpaceInvaders.vcxproj -> C:\Users\isaaccc1\Documents\GitHub\Physics-Theory\Physics-Theory\Debug\SpaceInvaders.exe

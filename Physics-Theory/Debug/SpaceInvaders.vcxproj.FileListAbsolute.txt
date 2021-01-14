@@ -6,3 +6,5 @@ C:\Users\Pep\Desktop\SpaceInvaders\Debug\SpaceInvaders.exe
 C:\Users\Pep\Desktop\SpaceInvaders\Debug\SpaceInvaders.pdb
 C:\Users\Bob\Desktop\SpaceInvaders\Debug\SpaceInvaders.exe
 C:\Users\Bob\Desktop\SpaceInvaders\Debug\SpaceInvaders.pdb
+C:\Users\isaaccc1\Documents\GitHub\Physics-Theory\Physics-Theory\Debug\SpaceInvaders.exe
+C:\Users\isaaccc1\Documents\GitHub\Physics-Theory\Physics-Theory\Debug\SpaceInvaders.pdb

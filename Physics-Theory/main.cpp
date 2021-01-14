@@ -2,12 +2,15 @@
 #include <Windows.h>
 #include "SDL2-2.0.12/include/SDL.h"
 #include "main.h"
+#define GRAVITY 10
 
 class Player
 {
 public:
 	SDL_Rect playerRect;
+	float angle;
 	float velocityX;
+	float velocityY;
 
 	Player(int x_, int y_, int w_, int h_)
 	{
@@ -15,7 +18,9 @@ public:
 		{
 			x_,y_,w_,h_
 		};
+		angle = 0;
 		velocityX = 0;
+		velocityY = 0;
 	}
 	~Player();
 };
@@ -28,22 +33,8 @@ int main(int argc, char** argv)
 
 	//bools
 	bool close;
-	//	bool shoot;
-	//	bool enemieShoot;
-	//	bool enemieAlive;
-		//bool rightTrue;
-		//bool leftTrue;
-		//int counter;
-	//	int counter2;
-		//int counterRight;
-		//int counterLeft;
-		//int deadCounter;
-		//int enemyShooting;
-		//int playerLives;
-		//int deadEnemies;
-
-		//Player object
-	Player* player = new Player(610, 690, 80, 20);
+	//Player object
+	Player* player = new Player(610, 690, 40, 40);
 
 	//Boxes object
 	SDL_Init(SDL_INIT_VIDEO);              // Initialize SDL2
@@ -69,40 +60,54 @@ int main(int argc, char** argv)
 
 		//PLAYER MOVEMENT
 
-		if (keysArray[SDL_SCANCODE_LEFT] && player->playerRect.x > 0)
-			player->velocityX -= 0.5f;
-		if (keysArray[SDL_SCANCODE_RIGHT] && player->playerRect.x < 1200)
-			player->velocityX += 0.5f;
+		if (keysArray[SDL_SCANCODE_LEFT])
+			player->angle -= 0.5f;
+		if (keysArray[SDL_SCANCODE_RIGHT])
+			player->angle += 0.5f;
+		if (keysArray[SDL_SCANCODE_UP])
+		{
+			player->velocityY += 0.01f * sin(player->angle);
+			player->velocityX += 0.01f * cos(player->angle);
+		}
+		if (keysArray[SDL_SCANCODE_DOWN])
+		{
+			player->velocityY -= 0.01f * sin(player->angle);
+			player->velocityX -= 0.01f * cos(player->angle);
+		}
+			
+
 
 		//PLAYER SPEED
-		player->playerRect.x = player->velocityX;
+		
+		player->playerRect.x += player->velocityX;
 
-		//ENEMIES DO GO DOWN
+		if (player->playerRect.x < 0)
+			player->playerRect.x = 0;
+		if (player->playerRect.x > 1280 - player->playerRect.w)
+			player->playerRect.x = 1280 - player->playerRect.w;
+
+		player->playerRect.y += player->velocityY;
+
+		if (player->playerRect.y < 0)
+			player->playerRect.y = 0;
+		if (player->playerRect.y > 720 - player->playerRect.h)
+			player->playerRect.y = 720 - player->playerRect.h;
+
 		//DRAW
 			//BACKGROUND
-		SDL_SetRenderDrawColor(renderer, 0, 47, 187, 255);
+		SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 		SDL_RenderClear(renderer);
 		//PLAYER
-		SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+		SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
 		SDL_RenderFillRect(renderer, &player->playerRect);
 
-		SDL_Rect aim =
-		{
-			player->playerRect.x + 40, 690, 5, 10
-		};
-
-		SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
-		SDL_RenderFillRect(renderer, &aim);
-
-		//GOODBOXES
 		SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);
-		//LIVES
-		//BULLETS
-		//ENEMIE BULLET
-		//ENEMIES
+
 		SDL_RenderPresent(renderer);
+
 		Uint32 frameTime = SDL_GetTicks() - startTime;
 		if (frameTime < 100 / 60) SDL_Delay(100 / 60 - frameTime);
-		return 0;
+
 	}
+	return 0;
 }
