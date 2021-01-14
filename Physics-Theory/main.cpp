@@ -31,7 +31,6 @@ int main(int argc, char** argv)
 	//	bool shoot;
 	//	bool enemieShoot;
 	//	bool enemieAlive;
-	//	bool step;
 		//bool rightTrue;
 		//bool leftTrue;
 		//int counter;
