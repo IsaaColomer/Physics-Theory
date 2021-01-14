@@ -1,0 +1,6 @@
+﻿  main.cpp
+C:\Users\Bob\Desktop\SpaceInvaders\main.cpp(80,43): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Bob\Desktop\SpaceInvaders\main.cpp(215,12): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+C:\Users\Bob\Desktop\SpaceInvaders\main.cpp(273,32): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\Bob\Desktop\SpaceInvaders\main.cpp(340,82): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+  SpaceInvaders.vcxproj -> C:\Users\Bob\Desktop\SpaceInvaders\Debug\SpaceInvaders.exe

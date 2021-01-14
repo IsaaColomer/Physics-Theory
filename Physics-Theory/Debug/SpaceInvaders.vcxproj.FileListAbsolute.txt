@@ -1,0 +1,8 @@
+C:\Users\isaaccc1\source\repos\SpaceInvaders\Debug\SpaceInvaders.exe
+C:\Users\isaaccc1\source\repos\SpaceInvaders\Debug\SpaceInvaders.pdb
+F:\Debug\SpaceInvaders.exe
+F:\Debug\SpaceInvaders.pdb
+C:\Users\Pep\Desktop\SpaceInvaders\Debug\SpaceInvaders.exe
+C:\Users\Pep\Desktop\SpaceInvaders\Debug\SpaceInvaders.pdb
+C:\Users\Bob\Desktop\SpaceInvaders\Debug\SpaceInvaders.exe
+C:\Users\Bob\Desktop\SpaceInvaders\Debug\SpaceInvaders.pdb
